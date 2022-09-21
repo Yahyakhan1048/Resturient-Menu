@@ -1,0 +1,195 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+h1, h2, h3, p {
+    margin: 0;
+}
+
+.container {
+    width: 85%;
+    max-width: 65em;
+    margin: 0 auto;
+}
+.split {
+    display: flex;
+    flex-direction: row;
+    min-width: 15em;
+    gap: 1em;
+    justify-content: center;
+    
+}
+.spacing > *+* {
+    margin: var(--spacer, 2rem);
+}
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.125em;
+    border-radius: 10px;
+    padding: .5em 1.25em;
+    background-color: rgb(7, 131, 139);
+    color: white;
+    transition: transform 250ms ease-in-out,
+    opacity 175ms linear;    /*   Slow the button jumping speed */
+}
+.btn:hover,
+.btn:focus {
+    transform: scale(1.1);   /*  Clicking some button to jump ---- */
+    opacity: .9;
+}
+
+.primary-title {
+    font-size: 4rem;
+    font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+    line-height: 1;
+    text-transform: uppercase;
+    z-index: 1;
+}
+section {
+    padding: 5em 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(2.5rem, calc(5vw + 1rem), 4rem);
+    line-height: 1;
+    color: rgb(19, 85, 94);
+    margin-bottom: 3rem;
+}
+
+.hero {
+    color: white;
+    text-align: center;
+    padding: 10em 0;
+    background: url(images/Hotel.jpg), radial-gradient(#444, rgb(36, 35, 35));  /*  set blur image */
+    background-blend-mode: multiply;   /*   to set blur image */
+    background-attachment: fixed;
+    background-repeat: no-repeat center center/cover;
+}
+.featured {
+    background: #eee;
+}
+
+.featured .featured_item{
+    display: block;
+    position: relative;
+    /*   For Jumping Image  */
+    text-decoration: none;
+    text-align: center;
+    transform: scale(.85);
+    transition: transform 250ms ease-in-out;
+}
+span {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+/*----- This two step Hide the Price and Name  */
+.featured_details {
+    opacity: 0;
+    transition: opacity 250ms linear;
+}
+.featured .featured_item:hover .featured_details, .featured .featured_item:focus .featured_details {
+    opacity: 1;
+}
+/*----- This two step Hide the Price and Name  */
+
+.featured .featured_item:hover,
+.featured .featured_item:focus {
+    transform: scale(1);  /*   For jumping image */
+}
+
+.featured_item img {
+    content: '';
+    border-radius: 10%;
+    background:  rgb(19, 85, 94);
+}
+
+
+/* =============== Third section =====================*/
+.product {
+    background: radial-gradient(red, yellow);
+    padding: 1rem;
+    border-radius: 5em;
+    margin-bottom: 3em;
+    text-align: center;
+}
+.product img {
+    margin: auto;
+    padding: 0;
+}
+
+#green .btn {
+    background: #444;
+}
+
+#blue .btn {
+    background: rgb(15, 9, 192);
+
+}
+.product h3 {
+    font-size: 4rem;
+    color: rgb(12, 99, 133);
+    line-height: 1.1;
+}
+#green {
+    background: radial-gradient(rgb(81, 250, 19), rgb(78, 103, 231));
+}
+
+#blue {
+    background: radial-gradient(rgb(19, 250, 211), rgb(187, 121, 244));
+}
+
+
+
+
+/* --------------footer-------*/
+.foot {
+    height: 20px;
+}
+.foot-1 p {
+    font-family: 'Times New Roman', Times, serif;
+    background: radial-gradient(rgb(39, 244, 203), rgb(53, 203, 226));
+    font-size: 1.7rem;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.foot-1 span {
+    padding-right: 10px;
+    color: rgb(15, 19, 17);
+    font-size: 2.5rem;
+}
+
+@media (min-width: 45em) {
+    .product img {
+        float: right;
+        width: 35%;
+
+    }
+    #green img {
+        float: left;
+        width: 35%;
+
+    }
+    #blur img {
+        float: right;
+        width: 35%;
+
+    }
+}
